@@ -1,0 +1,44 @@
+{
+  "careers": [
+    {
+      "id": "1",
+      "title": "web developer",
+      "salary": "nego",
+      "company_name": "aaa software consultant",
+      "publish_date": "2019-09-25",
+      "closing_date": "2019-10-25"
+    },
+    {
+      "id": "2",
+      "title": "accountant",
+      "salary": "1000",
+      "company_name": "abc microfinance",
+      "publish_date": "2019-09-25",
+      "closing_date": "2019-10-25"
+    },
+    {
+      "id": "3",
+      "title": "marketing",
+      "salary": "800",
+      "company_name": "bbb bank",
+      "publish_date": "2019-09-25",
+      "closing_date": "2019-10-25"
+    },
+    {
+      "id": "4",
+      "title": "cyber security",
+      "salary": "1200",
+      "company_name": "ccc bank",
+      "publish_date": "2019-09-25",
+      "closing_date": "2019-10-25"
+    },
+    {
+      "id": "5",
+      "title": "data analyst",
+      "salary": "900",
+      "company_name": "bbb bank",
+      "publish_date": "2019-09-25",
+      "closing_date": "2019-10-25"
+    }
+  ]
+}
