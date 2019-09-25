@@ -19,17 +19,8 @@ import {
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 
-const HomeScreen = ({ navigation }) => ( <View>
-                            <Text>HomeScreen</Text>
-                            <Button title="Goto about" 
-                                    onPress={() => navigation.navigate('About')}/>
-                          </View> )
-
-const AboutScreen = ({ navigation }) => ( <View>
-                        <Text>AboutScreen</Text>
-                        <Button title="Goto home" 
-                                onPress={() => navigation.navigate('Home')}/>
-                      </View> )
+import HomeScreen from './src/screens/homeScreen'
+import AboutScreen from './src/screens/aboutScreen'
 
 let StackNavigator = createStackNavigator({
   Home: HomeScreen,
