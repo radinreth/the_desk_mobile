@@ -30,6 +30,8 @@ class HomeScreen extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props
+
     return (
       <View>
         <Text>all careers:{this.state.careers.length}</Text>
@@ -39,7 +41,7 @@ class HomeScreen extends React.Component {
           keyExtractor={career => career.id}
         />
         <Button title="goto about"
-                onPress={() => this.props.navigation.navigate('About')} />
+                onPress={() => navigation.navigate('About')} />
       </View>
     )
   }
