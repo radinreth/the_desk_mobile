@@ -1,10 +1,48 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import axios from 'axios'
+import { View, Text, Button, FlatList } from 'react-native'
+class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      careers: []
+    }
+  }
 
-const HomeScreen = ({ navigation }) => ( <View>
-  <Text>HomeScreen</Text>
-  <Button title="Goto about" 
-          onPress={() => navigation.navigate('About')}/>
-</View> )
+  fetchCareers = async () => {
+    try {
+      let response = await axios.get('http://localhost:3000/careers')
+      console.log(response)
+      this.setState({
+        careers: response.data
+      })
+    } catch(e) {
+      console.log(e)
+    }
+  }
+
+  componentDidMount() {
+    this.fetchCareers()
+  }
+
+  _renderItem = (item) => {
+    return <Text>{item.title}</Text>
+  }
+
+  render() {
+    return (
+      <View>
+        <Text>all careers:{this.state.careers.length}</Text>
+        <FlatList
+          data={this.state.careers}
+          renderItem={(career) => this._renderItem(career.item)}
+          keyExtractor={career => career.id}
+        />
+        <Button title="goto about"
+                onPress={() => this.props.navigation.navigate('About')} />
+      </View>
+    )
+  }
+}
 
 export default HomeScreen
