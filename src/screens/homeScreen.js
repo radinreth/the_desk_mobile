@@ -26,15 +26,17 @@ class HomeScreen extends React.Component {
   }
 
   _renderItem = (item) => {
-    return <Text>{item.title}</Text>
+    return <View style={{ borderWidth: 1, padding: 10, marginBottom: 5 }}>
+              <Text>{item.title}</Text>
+            </View>
   }
 
   render() {
     const { navigation } = this.props
 
     return (
-      <View>
-        <Text>all careers:{this.state.careers.length}</Text>
+      <View style={{ padding: 5 }}>
+        <Text>All careers:{this.state.careers.length}</Text>
         <FlatList
           data={this.state.careers}
           renderItem={(career) => this._renderItem(career.item)}
