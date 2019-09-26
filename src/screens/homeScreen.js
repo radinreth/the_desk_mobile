@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { View, Text, Button, FlatList } from 'react-native'
+import { View, Text, Button, FlatList, TouchableOpacity, Alert } from 'react-native'
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
@@ -26,8 +26,14 @@ class HomeScreen extends React.Component {
   }
 
   _renderItem = (item) => {
-    return <View style={{ borderWidth: 1, padding: 10, marginBottom: 5 }}>
-              <Text>{item.title}</Text>
+    const { navigation } = this.props
+
+    return <View 
+              style={{ borderWidth: 1, padding: 10, marginBottom: 5 }}>
+              <TouchableOpacity 
+                onPress={ () => navigation.navigate('CareerDetail') }>
+                <Text>{item.title}</Text>
+              </TouchableOpacity>
             </View>
   }
 
@@ -36,7 +42,7 @@ class HomeScreen extends React.Component {
 
     return (
       <View style={{ padding: 5 }}>
-        <Text>All careers:{this.state.careers.length}</Text>
+        <Text>All careers: {this.state.careers.length}</Text>
         <FlatList
           data={this.state.careers}
           renderItem={(career) => this._renderItem(career.item)}

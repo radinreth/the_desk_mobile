@@ -21,9 +21,11 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import HomeScreen from './src/screens/homeScreen'
 import AboutScreen from './src/screens/aboutScreen'
+import CareerDetailScreen from './src/screens/careerDetailScreen'
 
 let StackNavigator = createStackNavigator({
   Home: HomeScreen,
+  CareerDetail: CareerDetailScreen,
   About: AboutScreen
 }, {
   initialRouteName: 'Home'
